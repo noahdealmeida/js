@@ -19,3 +19,21 @@ x.onkeyup=y.onkeyup=function(){
 x2.onkeyup=y2.onkeyup=function(){
    z2.textContent= subtractValues(x2.value,y2.value)
 }
+
+MultiValues=function(a,b){
+    
+    return parseFloat(a)*parseFloat(b)
+}
+
+x3.onkeyup=y3.onkeyup=function(){
+   z3.textContent= MultiValues(x3.value,y3.value)
+}
+
+DivideValues=function(a,b){
+    
+    return parseFloat(a)/parseFloat(b)
+}
+
+x4.onkeyup=y4.onkeyup=function(){
+   z4.textContent=DivideValues(x4.value,y4.value)
+}
