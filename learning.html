@@ -1,5 +1,6 @@
-
-
+<html>
+<head>
+	<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 <body>
 <h2>add two numbers</h2>
@@ -14,9 +15,80 @@
 <h2>divide two numbers</h2>
 <input id="x4" size="5"> / <input id="y4" size="5"> = <span id="z4">NaN</span>
 
+<h2>Operate on two numbers</h2>
+
+<input id="x5" size="5">
+<select id='operation'>
+	<option value="addition">+</option>
+	<option value="subtractValues">-</option>
+	<option value="multipication">*</option>
+	<option value="Divide">/</option>
+	<option value="Percent">%</option>
+</select>
+<input id="y5" size="5"> = <span id="z5">NaN</span>
+
+
 <p>
-	[<a href="https://github.com/noahdealmeida/js" target="_blank">source code]
+	[<a href="https://github.com/noahdealmeida/js" target="_blank">source code</a>]
 </p>
 
+<h2>Plot.ly</h2>
+Your mission, should you accept it, is to learn about Plot.ly <a href="https://plot.ly/javascript/getting-started/" target="_blank">here</a>, chose a dataset you find interresting, and plot it anyway it pleases you.
+<div id='uFool'></div>
+
+<h2>Plot external data</h2>
+<p>
+	Get some external data and plot it using Plot.ly. External data comes from outer space, for example, commets and other junk that could destroy dinasauric people who don't care about it.
+	Let's look at some commets tracked by NASA at <a href="https://data.nasa.gov/resource/b67r-rgxc" target="_blank">Near-Earth-Comets-Orbital-Elements</a>.
+</p>
+<p>
+	Some clues now about how to do this. If you try <a href="https://data.nasa.gov/resource/b67r-rgxc.json" target="_blank">https://data.nasa.gov/resource/b67r-rgxc.json</a>
+	you get a bunch of
+	<pre>
+{
+  "e" : "0.9671429085",
+  "w_deg" : "111.3324851",
+  "moid_au" : "0.063782",
+  "a2_au_d_2" : "0.000000000155",
+  "object" : "1P/Halley",
+  "epoch_tdb" : "49400",
+  "q_au_2" : "35.08",
+  "q_au_1" : "0.5859781115",
+  "tp_tdb" : "2446467.395",
+  "ref" : "J863/77",
+  "p_yr" : "75.32",
+  "object_name" : "1P/Halley",
+  "i_deg" : "162.2626906",
+  "node_deg" : "58.42008098",
+  "a1_au_d_2" : "0.000000000270"
+}
+	</pre>
+	To load the data you could use something like
+	<code>
+	Plotly.d3.json(url_of_the_JSON_data,callback_function)
+</code>
+<p>
+	Let me get this started for you:<br>
+	<code>
+	Plotly.d3.json("https://data.nasa.gov/resource/b67r-rgxc.json",function(x){ // x is the data
+		// the code that processes the data and gives it to Plotly goes here
+	})
+</code>
+<hr> <!-- to separate notes from resolution -->
+<div id="NEO">
+	<div id="e_vs_w_deg"></div> <!-- super daddy does this -->
+	<div id="e_vs_moid_au"></div> <!-- snaugthy pants tries to do this one -->
+</div>
+
+
+
+</p>
+
+</p>
+
+</p>
+https://data.nasa.gov/resource/b67r-rgxc.json
+
 <script src="learning.js" type="text/javascript"></script>
-</body></html>
+</body>
+</html>
